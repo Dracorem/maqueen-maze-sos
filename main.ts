@@ -1,0 +1,72 @@
+function TurnLeft () {
+    maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 255)
+maqueen.motorStop(maqueen.Motors.M1)
+basic.pause(500)
+    basic.pause(200)
+    maqueen.motorStop(maqueen.Motors.M2)
+}
+input.onButtonPressed(Button.A, function () {
+    basic.pause(500)
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 255)
+maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 255)
+basic.pause(2000)
+    basic.pause(1000)
+    basic.pause(100)
+    TurnRight()
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 255)
+maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 255)
+basic.pause(2000)
+    TurnRight()
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 255)
+maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 255)
+basic.pause(2000)
+    basic.pause(1000)
+    basic.pause(100)
+    TurnLeft()
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 255)
+maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 255)
+basic.pause(1000)
+    basic.pause(500)
+    TurnLeft()
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 255)
+maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 255)
+basic.pause(2000)
+    basic.pause(1000)
+    basic.pause(100)
+    maqueen.motorStop(maqueen.Motors.M1)
+maqueen.motorStop(maqueen.Motors.M2)
+SOS()
+})
+function TurnRight () {
+    maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 255)
+maqueen.motorStop(maqueen.Motors.M2)
+basic.pause(500)
+    basic.pause(100)
+    maqueen.motorStop(maqueen.Motors.M1)
+}
+function SOS () {
+    for (let index = 0; index < 3; index++) {
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+basic.pause(200)
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
+basic.pause(200)
+    }
+    for (let index = 0; index < 3; index++) {
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+basic.pause(500)
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
+basic.pause(200)
+    }
+    for (let index = 0; index < 3; index++) {
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+basic.pause(200)
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
+basic.pause(200)
+    }
+}
